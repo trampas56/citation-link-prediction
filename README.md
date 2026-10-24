@@ -16,6 +16,6 @@ The negative pairs are sampled so there are as many as the positive ones. The pr
 
 The notebook was made for Google Colab (CatBoost runs on the GPU) and reads the competition files (`abstracts.txt`, `authors.txt`, `edgelist.txt`, `test.txt`) from Google Drive, in `/content/drive/MyDrive/data_nlp`. The data isn't in the repo, it's on the competition's Kaggle page. The predictions are saved to `predictions.csv` in the same folder.
 
-`citations_model_new.py` is the notebook exported as a script.
+`citations_model_new.py` is the notebook exported as a script, so it also expects Colab (it mounts Google Drive and installs packages with `!pip`).
 
 The report (in Greek) is in [report.pdf](report.pdf).

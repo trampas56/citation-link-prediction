@@ -10,6 +10,7 @@ Original file is located at
 from google.colab import drive
 drive.mount('/content/drive')
 
+import os
 BASE_DIR = '/content/drive/MyDrive/data_nlp'
 PRED_PATH = os.path.join(BASE_DIR, 'predictions.csv')
 
@@ -226,7 +227,7 @@ cat_model.fit(X_tr, y_tr)
 
 val_preds_xg = xg_model.predict_proba(X_val)[:, 1]
 val_preds_cat = cat_model.predict_proba(X_val)[:, 1]
-final_probs_AUC = (xg_preds + cat_preds) / 2
+final_probs_AUC = (val_preds_xg + val_preds_cat) / 2
 print("Validation AUC:", roc_auc_score(y_val, final_probs_AUC))
 # val_preds_svm = svm_model.predict_proba(X_val)[:, 1]
 # print("validation AUC:", roc_auc_score(y_val, val_preds_svm))
